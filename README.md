@@ -26,7 +26,7 @@ text-decoration:none;border-radius:12px;width:90%;max-width:320px;
 font-weight:bold;animation:pulsar 1.5s infinite;
 }
 
-/* ===== PLANOS HORIZONTAL ===== */
+/* ===== PLANOS ===== */
 .planos-container{
 display:flex;
 overflow-x:auto;
@@ -36,7 +36,6 @@ scroll-snap-type:x mandatory;
 }
 .planos-container::-webkit-scrollbar{display:none}
 
-/* ===== FUNDO STREAMING ===== */
 .planos-bg{
 background:
 linear-gradient(to bottom, rgba(11,11,11,0.9), rgba(11,11,11,1)),
@@ -83,32 +82,39 @@ font-size:18px;
 cursor:pointer;
 }
 
-/* ===== OUTROS ===== */
-.review{
-background:#111;padding:15px;margin:10px auto;border-radius:10px;
-max-width:320px;display:flex;align-items:center;gap:10px
+/* ===== AVALIAÇÕES ===== */
+.reviews-box{
+background:#0f0f0f;
+padding:20px;
+border-radius:15px;
+margin-top:20px;
 }
 
-.review img{width:40px;height:40px;border-radius:50%}
+.review{
+background:#121212;
+padding:12px;
+margin:10px auto;
+border-radius:12px;
+max-width:320px;
+display:flex;
+align-items:center;
+gap:10px;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.review img{
+width:32px;
+height:32px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.review p{
+font-size:13px;
+text-align:left;
+}
 
 .footer{margin-top:30px;padding:20px;font-size:14px;color:#aaa}
-
-.popup{
-position:fixed;bottom:10px;left:10px;background:#111;padding:10px 15px;
-border-radius:10px;font-size:13px;display:none
-}
-
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-}
-
-.instagram-float{
-position:fixed;
-bottom:90px;
-right:20px;
-}
 
 @keyframes pulsar{
 0%{transform:scale(1)}
@@ -153,18 +159,7 @@ right:20px;
 
 <div class="container">
 
-<h2>⭐ Avaliações Reais</h2>
-
-<div class="review">
-<img src="https://randomuser.me/api/portraits/men/32.jpg">
-<p>Top demais, sem travar</p>
-</div>
-
-<div class="review">
-<img src="https://randomuser.me/api/portraits/women/45.jpg">
-<p>Melhor que Netflix</p>
-</div>
-
+<!-- PIX -->
 <h2>💰 Pagamento via Pix</h2>
 
 <div style="background:#111;padding:15px;border-radius:10px;margin:15px;">
@@ -243,6 +238,39 @@ right:20px;
 </div>
 
 </div>
+</div>
+
+<!-- AVALIAÇÕES -->
+<div class="reviews-box">
+
+<h2>⭐ Avaliações</h2>
+<p style="color:#aaa;font-size:13px;margin-top:5px;">+187 pessoas já avaliaram</p>
+
+<div class="review">
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+<p>Até agora tá rodando bem aqui 👍</p>
+</div>
+
+<div class="review">
+<img src="https://randomuser.me/api/portraits/women/45.jpg">
+<p>Uso mais à noite e não travou ainda</p>
+</div>
+
+<div class="review">
+<img src="https://randomuser.me/api/portraits/men/12.jpg">
+<p>Instalei rápido, foi tranquilo</p>
+</div>
+
+<div class="review">
+<img src="https://randomuser.me/api/portraits/women/22.jpg">
+<p>Pelo preço vale a pena sim</p>
+</div>
+
+<div class="review">
+<img src="https://randomuser.me/api/portraits/men/55.jpg">
+<p>Tem bastante coisa, tô testando ainda</p>
+</div>
+
 </div>
 
 </div>
