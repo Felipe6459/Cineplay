@@ -26,17 +26,17 @@ text-decoration:none;border-radius:12px;width:90%;max-width:320px;
 font-weight:bold;animation:pulsar 1.5s infinite;
 }
 
-/* ===== NOVO: PLANOS HORIZONTAL ===== */
+/* ===== PLANOS HORIZONTAL ===== */
 .planos-container{
 display:flex;
 overflow-x:auto;
 gap:15px;
-padding:10px;
+padding:10px 20px;
 scroll-snap-type:x mandatory;
 }
 .planos-container::-webkit-scrollbar{display:none}
 
-/* ===== NOVO: FUNDO STREAMING ===== */
+/* ===== FUNDO STREAMING ===== */
 .planos-bg{
 background:
 linear-gradient(to bottom, rgba(11,11,11,0.9), rgba(11,11,11,1)),
@@ -46,7 +46,7 @@ border-radius:20px;
 margin:20px 0;
 }
 
-/* ===== UPGRADE DOS CARDS ===== */
+/* ===== CARDS ===== */
 .card{
 min-width:260px;
 flex:0 0 auto;
@@ -65,6 +65,25 @@ max-width:350px;
 
 .price{font-size:22px;color:#7b2cff;margin:10px 0}
 
+/* ===== SETAS ===== */
+.setas{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-bottom:10px;
+}
+
+.setas button{
+background:#7b2cff;
+border:none;
+color:#fff;
+padding:10px 15px;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+}
+
+/* ===== OUTROS ===== */
 .review{
 background:#111;padding:15px;margin:10px auto;border-radius:10px;
 max-width:320px;display:flex;align-items:center;gap:10px
@@ -83,30 +102,18 @@ border-radius:10px;font-size:13px;display:none
 position:fixed;
 bottom:20px;
 right:20px;
-text-decoration:none;
 }
+
 .instagram-float{
 position:fixed;
 bottom:90px;
 right:20px;
 }
 
-@keyframes flutuar{
-0%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
-100%{transform:translateY(0)}
-}
-
 @keyframes pulsar{
 0%{transform:scale(1)}
 50%{transform:scale(1.08)}
 100%{transform:scale(1)}
-}
-
-@keyframes brilho{
-0%{opacity:0.6}
-50%{opacity:1}
-100%{opacity:0.6}
 }
 </style>
 </head>
@@ -174,6 +181,13 @@ right:20px;
 <div class="planos-bg">
 <h2>💰 Planos Mensais</h2>
 
+<p style="font-size:13px;color:#aaa;">👉 Arraste para o lado para ver mais planos</p>
+
+<div class="setas">
+<button onclick="scrollPlanos(this,-1)">⬅️</button>
+<button onclick="scrollPlanos(this,1)">➡️</button>
+</div>
+
 <div class="planos-container">
 
 <div class="card">
@@ -200,6 +214,13 @@ right:20px;
 <!-- PLANOS ANUAIS -->
 <div class="planos-bg">
 <h2>🔥 Planos Anuais</h2>
+
+<p style="font-size:13px;color:#aaa;">👉 Arraste para o lado para ver mais planos</p>
+
+<div class="setas">
+<button onclick="scrollPlanos(this,-1)">⬅️</button>
+<button onclick="scrollPlanos(this,1)">➡️</button>
+</div>
 
 <div class="planos-container">
 
@@ -230,6 +251,14 @@ right:20px;
 function copiarPix(){
 navigator.clipboard.writeText("3c3a8735-4475-4340-8090-649f95432cfa");
 alert("Chave Pix copiada!");
+}
+
+function scrollPlanos(btn, dir){
+const container = btn.parentElement.nextElementSibling;
+container.scrollBy({
+left: dir * 280,
+behavior: 'smooth'
+});
 }
 
 let time=600;
